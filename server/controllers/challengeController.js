@@ -10,7 +10,6 @@ function getSingleChallenge(req, res) {
   res.json({yo:"What's up"})
 }
 
-
 function updateChallenge(req, res) {
   res.json({hola:"hola"})
 }
