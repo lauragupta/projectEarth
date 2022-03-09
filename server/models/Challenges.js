@@ -25,7 +25,12 @@ const challengeSchema = new Schema(
       type: String,
       required: true,
     },
-    challengers: [Challenger],
+    challengers: [
+      {
+        type: Schema.Types.ObjectId, 
+        ref: 'User',
+        },
+    ],
   },
   {
     toJSON: {
