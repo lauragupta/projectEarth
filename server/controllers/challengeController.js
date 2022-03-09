@@ -6,4 +6,17 @@ function createChallenge(req, res) {
   res.json({hello:"helllooooo"})
 }
 
-module.exports = {getChallenges, createChallenge}
+function getSingleChallenge(req, res) {
+  res.json({yo:"What's up"})
+}
+
+
+function updateChallenge(req, res) {
+  res.json({hola:"hola"})
+}
+
+function deleteChallenge(req, res) {
+  res.json({Peace:"Be with you"})
+}
+
+module.exports = {getChallenges, createChallenge, getSingleChallenge, updateChallenge, deleteChallenge}
