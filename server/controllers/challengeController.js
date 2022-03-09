@@ -30,16 +30,61 @@ function createChallenge(req, res) {
   })
 }
 
+//Get a Single challenge
 function getSingleChallenge(req, res) {
-  res.json({yo:"What's up"})
+  Challenge.findOne({ _id: req.params.challengeId })
+  .select('-__v')
+  .then(async (challenge) =>
+    !challenge
+      ? res.status(404).json({ message: 'No challenge with that ID' })
+      : res.json({
+          challenge,
+        })
+  )
+  .catch((err) => {
+    console.log(err);
+    return res.status(500).json(err);
+  });
 }
 
+//Update the challenge
 function updateChallenge(req, res) {
-  res.json({hola:"hola"})
+  Challenge.findOneAndUpdate(
+    { _id: req.params.challengeId },
+    { $set: req.body },
+    { runValidators: true, new: true }
+  )
+  .then((challenge) =>
+    !challenge
+      ? res.status(404).json({ message: 'No challenge with this id.'})
+      : res.json(challenge)
+    )
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 }
 
+//Delete the challenge 
 function deleteChallenge(req, res) {
-  res.json({Peace:"Be with you"})
+  Challenge.findOneAndRemove({ _id: req.params.challengeId })
+  .then((challenge) =>
+    !challenge
+      ? res.status(404).json({ message: 'No challenge with this id!' })
+      : User.findOneAndUpdate(
+          { thoughts: req.params.challengeId },
+          { $pull: { challenge: req.params.challengeId } },
+          { new: true }
+        )
+  )
+  .then((user) =>
+    !user
+      ? res.status(404).json({
+          message: 'Challenge deleted but no user with this id!',
+        })
+      : res.json({ message: 'Challenge successfully deleted!' })
+  )
+  .catch((err) => res.status(500).json(err));
 }
 
 module.exports = {getChallenges, createChallenge, getSingleChallenge, updateChallenge, deleteChallenge}
