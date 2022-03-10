@@ -14,7 +14,11 @@ const userSchema = new Schema(
       required: true,
       unique: true,
     },
-    challenges: [
+    password: {
+      type: String,
+      required: true,
+    },
+    myChallenges: [
       {
         type: Schema.Types.ObjectId, 
         ref: 'Challenge',
@@ -30,7 +34,7 @@ const userSchema = new Schema(
 
  // Create a virtual property 'numberOfChallenges' that gets the number of challenges a user has created
  userSchema.virtual('numberOfChallenges').get(function () {
-  return this.challenges.length;
+  return this.myChallenges.length;
 });
 
 // Initialize User model
