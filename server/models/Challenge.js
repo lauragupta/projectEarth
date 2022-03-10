@@ -25,6 +25,10 @@ const challengeSchema = new Schema(
       type: String,
       required: true,
     },
+    userId: {
+      type: String,
+      required: true
+    },
     challengers: [
       {
         type: Schema.Types.ObjectId, 
