@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './Components/Header';
 import Challenges from './Components/Pages/Challenges';
 import SignUp from './Components/Pages/SignUp';
@@ -6,29 +7,20 @@ import LogIn from './Components/Pages/LogIn';
 import About from './Components/Pages/About';
 import './App.css';
 
-
 function App() {
-  const [currentPage, setCurrentPage] = useState('Challenges');
 
-  const renderPage = () => {
-    if (currentPage === 'Challenges') {
-      return <Challenges />;
-    }
-    if (currentPage === 'SignUp') {
-      return <SignUp />;
-    }
-    if (currentPage === 'LogIn') {
-      return <LogIn />;
-    }
-    return <About />;
-  };
-
-  const handlePageChange = (page) => setCurrentPage(page);
   return (
-    <div className="App">
-      <Header currentPage={currentPage} handlePageChange={handlePageChange} />
-      {/* {renderPage()} */}
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Routes>
+          {/* <Route path="/" element={<Challenges />} />
+          <Route path="SignUp" element={<SignUp />} />
+          <Route path="LogIn" element={<LogIn />} />
+          <Route path="about" element={<About />} /> */}
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
