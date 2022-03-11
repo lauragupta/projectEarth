@@ -4,7 +4,7 @@ function About() {
   
   return (
     <div>
-      <h1>Check out these Challenges! What can you do?</h1>
+      <h1>Here's how it all started...</h1>
     </div>
   )
 }
