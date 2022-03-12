@@ -6,6 +6,7 @@ import Challenges from './Components/Pages/Challenges';
 import SignUp from './Components/Pages/SignUp';
 import LogIn from './Components/Pages/LogIn';
 import About from './Components/Pages/About';
+import SingleChallenge from './Components/Pages/SingleChallenge';
 import './App.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Challenges/>} />
+          <Route path="challenges/:challengeId" element={<SingleChallenge/>} />
           <Route path="SignUp" element={<SignUp/>} />
           <Route path="LogIn" element={<LogIn/>} />
           <Route path="about" element={<About/>} />
