@@ -15,6 +15,9 @@ function Header() {
            <Link to="/">Challenges</Link>
           </li>
           <li className="nav-item">
+            <Link to="/AddChallenge">Add a Challenge</Link>
+          </li>
+          <li className="nav-item">
             <Link to="/SignUp">Sign Up</Link>
           </li>
           <li className="nav-item">

@@ -21,13 +21,10 @@ const challengeSchema = new Schema(
     expiresAt: {
       type: Date,
     },
-    username: {
-      type: String,
-      required: true,
-    },
     userId: {
       type: String,
-      required: true
+      required: true,
+
     },
     challengers: [
       {

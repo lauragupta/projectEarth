@@ -7,6 +7,7 @@ import SignUp from './Components/Pages/SignUp';
 import LogIn from './Components/Pages/LogIn';
 import About from './Components/Pages/About';
 import SingleChallenge from './Components/Pages/SingleChallenge';
+import AddChallenge from './Components/Pages/AddChallenge';
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Challenges/>} />
           <Route path="challenges/:challengeId" element={<SingleChallenge/>} />
+          <Route path="AddChallenge" element={<AddChallenge/>} />
           <Route path="SignUp" element={<SignUp/>} />
           <Route path="LogIn" element={<LogIn/>} />
           <Route path="about" element={<About/>} />
