@@ -1,5 +1,6 @@
 const router = require('express').Router();
 
+
 const { getSingleChallenge } = require('../../controllers/challengeController');
 const {
   createUser,

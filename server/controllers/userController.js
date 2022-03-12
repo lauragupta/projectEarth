@@ -1,4 +1,6 @@
 const { User, Challenge } = require('../models');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
 
 const userChallengeList = async () =>
   User.aggregate([
