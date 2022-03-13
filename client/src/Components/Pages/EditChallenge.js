@@ -3,7 +3,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 function EditChallenge() {
   let params = useParams();
-  console.log(params)
   const [formTitle, setFormTitle] = useState(null);
   const [formText, setFormText] = useState(null);
   useEffect(() => {

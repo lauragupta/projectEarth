@@ -11,7 +11,6 @@ function ChallengeCard({challenge}) {
         <h6 className="card-subtitle mb-2 text-muted">Created By: {challenge.username}</h6>
         <p className="card-text">{challenge.challengeText}</p>
         <h6 className="card-startDate">Challenge Started on: {challenge.date}</h6>
-        <Link to={`/challenges/${challenge.id}/update`}>Edit Challenge</Link>
       </div>
     </div>
   )
