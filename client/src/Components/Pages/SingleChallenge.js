@@ -6,7 +6,6 @@ import ChallengeCard from '../ChallengeCard';
 function SingleChallenge() {
   const [challenge, setChallenge] = useState(null);
   let params = useParams();
-  console.log(params)
   useEffect(() => {
     fetch(`http://localhost:3001/api/challenges/${params.challengeId}`)
     .then(response => response.json())

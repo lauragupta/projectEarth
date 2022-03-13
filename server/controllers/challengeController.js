@@ -58,7 +58,7 @@ function updateChallenge(req, res) {
   .then((challenge) =>
     !challenge
       ? res.status(404).json({ message: 'No challenge with this id.'})
-      : res.json(challenge)
+      : res.json({challenge})
     )
     .catch((err) => {
       console.log(err);

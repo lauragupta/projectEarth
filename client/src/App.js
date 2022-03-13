@@ -9,6 +9,7 @@ import About from './Components/Pages/About';
 import SingleChallenge from './Components/Pages/SingleChallenge';
 import AddChallenge from './Components/Pages/AddChallenge';
 import './App.css';
+import EditChallenge from './Components/Pages/EditChallenge';
 
 function App() {
 
@@ -18,10 +19,11 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Challenges/>} />
+          <Route path="addchallenge" element={<AddChallenge/>} />
           <Route path="challenges/:challengeId" element={<SingleChallenge/>} />
-          <Route path="AddChallenge" element={<AddChallenge/>} />
-          <Route path="SignUp" element={<SignUp/>} />
-          <Route path="LogIn" element={<LogIn/>} />
+          <Route path="challenges/:challengeId/update" element={<EditChallenge/>} />
+          <Route path="signup" element={<SignUp/>} />
+          <Route path="login" element={<LogIn/>} />
           <Route path="about" element={<About/>} />
         </Routes>
         <Footer />
