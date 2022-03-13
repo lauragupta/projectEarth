@@ -8,26 +8,27 @@ function getChallenges(req, res) {
 }
 
 //Create a challenge
-function createChallenge(req, res) {
-  Challenge.create(req.body)
-  .then((challenge) => {
-    return User.findOneAndUpdate(
+async function createChallenge(req, res) {
+  try {
+    const challenge = await Challenge.create(req.body)
+    if (!challenge) {
+      return res.status(500).json({ message: 'Not able to create challenge'})
+    }
+    const user = await User.findOneAndUpdate(
       { _id: req.body.userId },
       { $addToSet: { myChallenges: challenge.id } },
       { new: true }   
     );
-  })
-  .then((user) =>
-  !user 
-    ? res.status(404).json({
-      message: "Challenge created, but no user was found with that ID",
-    })
-    : res.json('Challenge was created successfully!')
-  )
-  .catch((err) => {
+    if (!user) {
+      return res.status(404).json({
+        message: "Challenge created, but no user was found with that ID",
+      })
+    }
+    res.json({challenge})
+  } catch (err) {
     console.log(err)
     res.status(500).json(err);
-  })
+  }
 }
 
 //Get a Single challenge
