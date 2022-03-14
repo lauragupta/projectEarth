@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import auth from "../../utils/auth"
 
 
-function LogIn() {
+function LogIn(props) {
   const [formEmail, setFormEmail] = useState("");
   const [formPassword, setFormPassword] = useState("");
 
@@ -32,8 +32,9 @@ function LogIn() {
     })
       .then(response => response.json())
       .then(data => {
-        auth.login(data.token)
-        navigate(`/`)
+        auth.login(data.token);
+        props.setisLoggedIn(true);
+        navigate(`/`);
       })
   }
 

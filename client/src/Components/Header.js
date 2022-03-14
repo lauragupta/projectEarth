@@ -1,17 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import auth from '../utils/auth';
 
-function Header() {
-  const [isLoggedIn, setisLoggedIn] = useState(false);
-  useEffect(() => {
-    const isLoggedIn = auth.isLoggedIn();
-    setisLoggedIn(isLoggedIn);
-  }, []);
+function Header(props) {
+
   let navigate = useNavigate();
   function handleLogOut(e) {
     auth.logout();
-    setisLoggedIn(false);
+    props.setisLoggedIn(false);
     navigate(`/`)
   }
   return (
@@ -28,13 +24,13 @@ function Header() {
           <li className="nav-item">
             <Link to="/addchallenge">Add a Challenge</Link>
           </li>
-          {!isLoggedIn && <li className="nav-item">
+          {!props.isLoggedIn && <li className="nav-item">
             <Link to="/signup">Sign Up</Link>
           </li>}
-          {!isLoggedIn && <li className="nav-item">
+          {!props.isLoggedIn && <li className="nav-item">
             <Link to="/login">Log In</Link>
           </li>}
-          {isLoggedIn && <li className="nav-item">
+          {props.isLoggedIn && <li className="nav-item">
             <button onClick={handleLogOut}>Log Out</button>
           </li>}
           {/* <li className="nav-item">
