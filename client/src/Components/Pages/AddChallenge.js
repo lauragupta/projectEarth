@@ -20,7 +20,7 @@ function AddChallenge() {
     const data = {
       challengeTitle: formTitle,
       challengeText: formText,
-      userId: "6229891c366d2f99af3ac727"
+      
     }
     fetch(`http://localhost:3001/api/challenges`, {
       method: 'POST',
