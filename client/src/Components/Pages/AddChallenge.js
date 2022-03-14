@@ -49,7 +49,7 @@ function AddChallenge() {
           <textarea className="form-control" type="textera" onChange={handleTextChange} id="challengeText" />
         </div>
         <div className="form-group">
-          <button className="btn btn-primary" type="submit">Submit</button>
+          <button className="btn-sm btn-primary" type="submit">Submit</button>
         </div>
       </form>
     </div>

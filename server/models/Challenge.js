@@ -21,9 +21,10 @@ const challengeSchema = new Schema(
     expiresAt: {
       type: Date,
     },
-    userId: {
-      type: String,
+    user: {
+      type: Schema.Types.ObjectId,
       required: true,
+      ref: "User",
 
     },
     challengers: [

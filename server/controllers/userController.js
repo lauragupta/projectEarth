@@ -1,6 +1,7 @@
 const { User, Challenge } = require('../models');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const { signToken } = require('../utils/auth');
 
 const userChallengeList = async () =>
   User.aggregate([
@@ -17,10 +18,10 @@ function getUsers(req, res) {
 }
 
 //Create a user
-function createUser(req, res) {
-  User.create(req.body)
-  .then((user) => res.json(user))
-  .catch((err) => res.status(500).json(err));
+async function createUser(req, res) {
+  const user = await User.create(req.body)
+  const token = signToken(user);
+  return res.json({ token, user });
 }
 
 //Get a single User
