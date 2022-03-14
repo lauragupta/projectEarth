@@ -5,7 +5,7 @@ import Footer from './Components/Footer'
 import Challenges from './Components/Pages/Challenges';
 import SignUp from './Components/Pages/SignUp';
 import LogIn from './Components/Pages/LogIn';
-import About from './Components/Pages/About';
+// import About from './Components/Pages/About';
 import SingleChallenge from './Components/Pages/SingleChallenge';
 import AddChallenge from './Components/Pages/AddChallenge';
 import './App.css';
@@ -24,7 +24,7 @@ function App() {
           <Route path="challenges/:challengeId/update" element={<EditChallenge/>} />
           <Route path="signup" element={<SignUp/>} />
           <Route path="login" element={<LogIn/>} />
-          <Route path="about" element={<About/>} />
+          {/* <Route path="about" element={<About/>} /> */}
         </Routes>
         <Footer />
       </div>

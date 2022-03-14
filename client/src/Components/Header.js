@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import auth from '../utils/auth';
 
 function Header() {
-
+  const [isLoggedIn, setisLoggedIn] = useState(false);
+  useEffect(() => {
+    const isLoggedIn = auth.isLoggedIn();
+    setisLoggedIn(isLoggedIn);
+  }, []);
+  function handleLogOut(e) {
+    auth.logout();
+    setisLoggedIn(false);
+  }
   return (
     <nav className="navbar navbar-expand-sm navbar-light">
       <div className="navbar-brand">Project Earth</div>
@@ -15,17 +24,20 @@ function Header() {
            <Link to="/">Challenges</Link>
           </li>
           <li className="nav-item">
-            <Link to="/AddChallenge">Add a Challenge</Link>
+            <Link to="/addchallenge">Add a Challenge</Link>
           </li>
-          <li className="nav-item">
-            <Link to="/SignUp">Sign Up</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/LogIn">Log In</Link>
-          </li>
-          <li className="nav-item">
+          {!isLoggedIn && <li className="nav-item">
+            <Link to="/signup">Sign Up</Link>
+          </li>}
+          {!isLoggedIn && <li className="nav-item">
+            <Link to="/login">Log In</Link>
+          </li>}
+          {isLoggedIn && <li className="nav-item">
+            <button onClick={handleLogOut}>Log Out</button>
+          </li>}
+          {/* <li className="nav-item">
             <Link to="/about">About</Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </nav>
