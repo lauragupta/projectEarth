@@ -22,15 +22,17 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Header isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn}/>
-        <Routes>
-          <Route path="/" element={<Challenges/>} />
-          <Route path="addchallenge" element={<AddChallenge/>} />
-          <Route path="challenges/:challengeId" element={<SingleChallenge/>} />
-          <Route path="challenges/:challengeId/update" element={<EditChallenge/>} />
-          <Route path="signup" element={<SignUp isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn}/>} />
-          <Route path="login" element={<LogIn isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn}/>} />
-          {/* <Route path="about" element={<About/>} /> */}
-        </Routes>
+        <div className='container'>
+          <Routes>
+            <Route path="/" element={<Challenges/>} />
+            <Route path="addchallenge" element={<AddChallenge/>} />
+            <Route path="challenges/:challengeId" element={<SingleChallenge/>} />
+            <Route path="challenges/:challengeId/update" element={<EditChallenge/>} />
+            <Route path="signup" element={<SignUp isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn}/>} />
+            <Route path="login" element={<LogIn isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn}/>} />
+            {/* <Route path="about" element={<About/>} /> */}
+          </Routes>
+        </div>
         <Footer />
       </div>
     </BrowserRouter>
