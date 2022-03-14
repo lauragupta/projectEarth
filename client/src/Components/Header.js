@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from '../utils/auth';
 
 function Header() {
@@ -8,9 +8,11 @@ function Header() {
     const isLoggedIn = auth.isLoggedIn();
     setisLoggedIn(isLoggedIn);
   }, []);
+  let navigate = useNavigate();
   function handleLogOut(e) {
     auth.logout();
     setisLoggedIn(false);
+    navigate(`/`)
   }
   return (
     <nav className="navbar navbar-expand-sm navbar-light">
