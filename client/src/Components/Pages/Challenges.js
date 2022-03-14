@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import ChallengeCard from '../ChallengeCard';
+import { API_ROOT } from '../../constants';
 
 
 function Challenges() {
   const [challenges, setChallenges] = useState(null);
   useEffect(() => {
-    fetch('http://localhost:3001/api/challenges')
+    fetch(`${API_ROOT}/api/challenges`)
     .then(response => response.json())
     .then(data => setChallenges(data))
   }, []) 

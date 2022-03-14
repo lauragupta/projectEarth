@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import auth from "../../utils/auth"
+import {API_ROOT} from '../../constants';
 
 function SignUp(props) {
   const [formUsername, setFormUsername] = useState("");
@@ -27,7 +28,7 @@ function SignUp(props) {
       email: formEmail,
       password: formPassword
     }
-    fetch(`http://localhost:3001/api/users`, {
+    fetch(`${API_ROOT}/api/users`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

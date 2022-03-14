@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import ChallengeCard from '../ChallengeCard';
+import {API_ROOT} from '../../constants';
 
 
 function SingleChallenge() {
   const [challenge, setChallenge] = useState(null);
   let params = useParams();
   useEffect(() => {
-    fetch(`http://localhost:3001/api/challenges/${params.challengeId}`)
+    fetch(`${API_ROOT}/api/challenges/${params.challengeId}`)
     .then(response => response.json())
     .then(data => setChallenge(data.challenge))
   }, []) 
@@ -16,7 +17,7 @@ function SingleChallenge() {
 
   function onClick(e) {
     //make the api call to delete the challenge
-    fetch(`http://localhost:3001/api/challenges/${params.challengeId}`, {
+    fetch(`${API_ROOT}/api/challenges/${params.challengeId}`, {
       method: 'DELETE'
     })
     //re-route to the challenge page

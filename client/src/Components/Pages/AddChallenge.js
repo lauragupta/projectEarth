@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {API_ROOT} from '../../constants';
 
 function AddChallenge() {
   const [formTitle, setFormTitle] = useState("");
@@ -22,7 +23,7 @@ function AddChallenge() {
       challengeText: formText,
       
     }
-    fetch(`http://localhost:3001/api/challenges`, {
+    fetch(`${API_ROOT}/api/challenges`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

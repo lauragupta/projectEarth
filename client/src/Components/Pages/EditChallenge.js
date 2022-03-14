@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import {API_ROOT} from '../../constants';
 
 function EditChallenge() {
   let params = useParams();
   const [formTitle, setFormTitle] = useState(null);
   const [formText, setFormText] = useState(null);
   useEffect(() => {
-    fetch(`http://localhost:3001/api/challenges/${params.challengeId}`)
+    fetch(`${API_ROOT}/api/challenges/${params.challengeId}`)
     .then(response => response.json())
     .then(data => {
       setFormTitle(data.challenge.challengeTitle)
@@ -31,7 +32,7 @@ function EditChallenge() {
       challengeText: formText,
       
     }
-    fetch(`http://localhost:3001/api/challenges/${params.challengeId}`, {
+    fetch(`${API_ROOT}/api/challenges/${params.challengeId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

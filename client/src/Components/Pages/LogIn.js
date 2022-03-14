@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import auth from "../../utils/auth"
+import {API_ROOT} from '../../constants';
 
 
 function LogIn(props) {
@@ -23,7 +24,7 @@ function LogIn(props) {
       email: formEmail,
       password: formPassword
     }
-    fetch(`http://localhost:3001/api/auth/login`, {
+    fetch(`${API_ROOT}/api/auth/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
