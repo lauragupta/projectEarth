@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const db = require('./config/connection');
 const routes = require('./routes');
+const path = require('path');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -10,7 +11,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.resolve(__dirname, "./client/build")));
+app.use(express.static(path.resolve(__dirname, "./client/build/static")));
 
 app.use(routes);
 
