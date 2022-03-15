@@ -4,6 +4,7 @@ const cors = require('cors');
 const db = require('./config/connection');
 const routes = require('./routes');
 const path = require('path');
+const { authMiddleware } = require('./utils/auth');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -12,6 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, "./client/build/static")));
+app.use(authMiddleware);
 
 app.use(routes);
 

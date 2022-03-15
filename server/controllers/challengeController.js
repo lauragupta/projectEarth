@@ -4,7 +4,7 @@ const { Challenge, User } = require("../models");
 async function getChallenges(req, res) {
   try {
     const challenges = await Challenge.find()
-      .populate('user')
+      // .populate('user')
     console.log(challenges)
     return res.json(challenges)
   } catch(err) {
@@ -16,10 +16,8 @@ async function getChallenges(req, res) {
 //Create a challenge
 async function createChallenge(req, res) {
   try {
-    //TODO: switch to using JWT for userId
-    const userId = "622f88239e78a4f5432f1529"
+    const userId = req.user._id
     const challengeData = {...req.body, user: userId}
-    console.log(challengeData)
     const challenge = await Challenge.create(challengeData)
     if (!challenge) {
       return res.status(500).json({ message: 'Not able to create challenge'})

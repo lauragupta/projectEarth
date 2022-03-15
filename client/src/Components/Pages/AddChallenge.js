@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {API_ROOT} from '../../constants';
+import auth from '../../utils/auth';
 
 function AddChallenge() {
   const [formTitle, setFormTitle] = useState("");
@@ -23,10 +24,12 @@ function AddChallenge() {
       challengeText: formText,
       
     }
+    const token = auth.getToken()
     fetch(`${API_ROOT}/api/challenges`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        authorization: token ? `Bearer ${token}` : '',
       },
       body: JSON.stringify(data)
     })
