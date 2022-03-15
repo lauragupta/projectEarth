@@ -32,15 +32,15 @@ function SingleChallenge() {
   }
   const challengeAuthorId = challenge?.user?.id
   const profile = auth.getProfile()
-  const userIsAuthor = challengeAuthorId === profile.data._id
+  const userIsAuthor = (challengeAuthorId === profile?.data?._id)
 
   return (
     <div>
       <h1>Check out this challenge! Would you like to join? </h1>
       <div>
         {challenge && <ChallengeCard challenge={challenge} />} 
-        {userIsAuthor && <Link to={`/challenges/${challenge.id}/update`}>Edit Challenge</Link>}
-        {userIsAuthor && <button className="btn-sm btn-primary" type="button" onClick={onClick}>Delete Challenge</button>}
+        {challenge && userIsAuthor && <Link to={`/challenges/${challenge.id}/update`}>Edit Challenge</Link>}
+        {challenge && userIsAuthor && <button className="btn-sm btn-primary" type="button" onClick={onClick}>Delete Challenge</button>}
       </div>
     </div>
   )
