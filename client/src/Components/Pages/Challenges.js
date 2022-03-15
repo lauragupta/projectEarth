@@ -14,7 +14,7 @@ function Challenges() {
   return (
     <div>
       <h1>Check out these Challenges! What can you do?</h1>
-      {challenges ? challenges.map((challenge) => <ChallengeCard challenge={challenge} key={challenge.id} />) : <p>loading</p>} 
+      {challenges && challenges.map((challenge) => <ChallengeCard challenge={challenge} key={challenge.id} />)} 
     </div>
   )
 }

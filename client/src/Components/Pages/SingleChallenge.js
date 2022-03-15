@@ -38,13 +38,9 @@ function SingleChallenge() {
     <div>
       <h1>Check out this challenge! Would you like to join? </h1>
       <div>
-        {challenge ? 
-          <>
-            <ChallengeCard challenge={challenge} />  
-          </>
-          : <p>loading</p>} 
-          {userIsAuthor && <Link to={`/challenges/${challenge.id}/update`}>Edit Challenge</Link>}
-          {userIsAuthor && <button className="btn-sm btn-primary" type="button" onClick={onClick}>Delete Challenge</button>}
+        {challenge && <ChallengeCard challenge={challenge} />} 
+        {userIsAuthor && <Link to={`/challenges/${challenge.id}/update`}>Edit Challenge</Link>}
+        {userIsAuthor && <button className="btn-sm btn-primary" type="button" onClick={onClick}>Delete Challenge</button>}
       </div>
     </div>
   )
