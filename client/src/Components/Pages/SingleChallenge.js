@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import ChallengeCard from '../ChallengeCard';
 import {API_ROOT} from '../../constants';
+import auth from '../../utils/auth';
 
 
 function SingleChallenge() {
@@ -17,8 +18,13 @@ function SingleChallenge() {
 
   function onClick(e) {
     //make the api call to delete the challenge
+    const token = auth.getToken()
     fetch(`${API_ROOT}/api/challenges/${params.challengeId}`, {
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: token ? `Bearer ${token}` : '',
+      },
     })
     //re-route to the challenge page
     .then( () => navigate('/'))

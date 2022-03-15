@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import {API_ROOT} from '../../constants';
+import auth from '../../utils/auth';
 
 function EditChallenge() {
   let params = useParams();
@@ -32,10 +33,12 @@ function EditChallenge() {
       challengeText: formText,
       
     }
+    const token = auth.getToken()
     fetch(`${API_ROOT}/api/challenges/${params.challengeId}`, {
       method: 'PUT',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        authorization: token ? `Bearer ${token}` : '',
       },
       body: JSON.stringify(data)
     })
