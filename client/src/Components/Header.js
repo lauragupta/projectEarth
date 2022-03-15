@@ -21,9 +21,9 @@ function Header(props) {
           <li className="nav-item">
            <Link to="/">Challenges</Link>
           </li>
-          <li className="nav-item">
+          {props.isLoggedIn &&<li className="nav-item">
             <Link to="/addchallenge">Add a Challenge</Link>
-          </li>
+          </li>}
           {!props.isLoggedIn && <li className="nav-item">
             <Link to="/signup">Sign Up</Link>
           </li>}
