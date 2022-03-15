@@ -12,7 +12,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.resolve(__dirname, "./client/build/static")));
+app.use("/static", express.static(path.resolve(__dirname, "../client/build/static")));
 app.use(authMiddleware);
 
 app.use(routes);
