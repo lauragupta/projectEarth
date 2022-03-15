@@ -4,7 +4,7 @@ const { Challenge, User } = require("../models");
 async function getChallenges(req, res) {
   try {
     const challenges = await Challenge.find()
-      .populate('user').exec()
+      .populate('user')
     return res.json(challenges)
   } catch(err) {
     console.log(err)
@@ -42,6 +42,7 @@ async function createChallenge(req, res) {
 //Get a Single challenge
 function getSingleChallenge(req, res) {
   Challenge.findOne({ _id: req.params.challengeId })
+  .populate('user')
   .select('-__v')
   .then(async (challenge) =>
     !challenge
