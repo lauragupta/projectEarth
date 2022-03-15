@@ -4,10 +4,10 @@ const { Challenge, User } = require("../models");
 async function getChallenges(req, res) {
   try {
     const challenges = await Challenge.find()
-      // .populate('user')
-    console.log(challenges)
+      .populate('user').exec()
     return res.json(challenges)
   } catch(err) {
+    console.log(err)
     res.status(500).json(err);
   } 
 }

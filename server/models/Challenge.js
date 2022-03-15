@@ -24,13 +24,13 @@ const challengeSchema = new Schema(
     user: {
       type: Schema.Types.ObjectId,
       required: true,
-      ref: "User",
+      ref: "user",
 
     },
     challengers: [
       {
         type: Schema.Types.ObjectId, 
-        ref: 'User',
+        ref: 'user',
         },
     ],
   },
@@ -52,6 +52,6 @@ challengeSchema.virtual('date').get(function() {
 });
 
 // Initialize Challenge model
-const Challenge= model('challenge', challengeSchema);
+const Challenge = model('challenge', challengeSchema);
 
 module.exports = Challenge;
