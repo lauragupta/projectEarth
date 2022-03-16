@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import CharacterCounter from 'react-character-counter';
 import {API_ROOT} from '../../constants';
 import auth from '../../utils/auth';
 
@@ -15,7 +16,9 @@ function AddChallenge() {
   const handleTextChange = (e) => {
     const inputValue = e.target.value;
     setFormText(inputValue);
+
   }
+
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -39,7 +42,7 @@ function AddChallenge() {
         navigate(`/challenges/${challengeId}`)
       })
   }
-
+  const textLength = 500
   return (
     <div>
       <h1>Create your own Challenge!</h1>
@@ -50,7 +53,9 @@ function AddChallenge() {
         </div>
         <div className="form-group mb-3">
           <label htmlFor="challengeText">Enter your Challenge:</label>
-          <textarea className="form-control" type="textera" onChange={handleTextChange} id="challengeText" />
+          <CharacterCounter value={formText} maxLength={textLength} >
+            <textarea className="form-control" maxlength={textLength} value={formText} onChange={handleTextChange} id="challengeText" />
+          </CharacterCounter>
         </div>
         <div className="form-group">
           <button className="btn-sm btn-primary" type="submit">Submit</button>
