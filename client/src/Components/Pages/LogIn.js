@@ -41,7 +41,7 @@ function LogIn(props) {
 
   return (
     <div>
-      <h1>Log Back in to see your Challenges or to Create your own!</h1>
+      <h1>Log Back in to Create your own Challenge!</h1>
       <form className="form" onSubmit={handleFormSubmit} id="signup-form">
         <div className="form-group">
           <label htmlFor="logInEmail">email:</label>

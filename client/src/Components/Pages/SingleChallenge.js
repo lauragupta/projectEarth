@@ -3,6 +3,7 @@ import { useNavigate, useParams, Link } from 'react-router-dom';
 import ChallengeCard from '../ChallengeCard';
 import {API_ROOT} from '../../constants';
 import auth from '../../utils/auth';
+import './SingleChallenge.scss';
 
 
 function SingleChallenge() {
@@ -36,11 +37,11 @@ function SingleChallenge() {
 
   return (
     <div>
-      <h1>Check out this challenge! Would you like to join? </h1>
+      <h1>Check out this challenge!</h1>
       <div>
         {challenge && <ChallengeCard challenge={challenge} />} 
         {challenge && userIsAuthor && <Link to={`/challenges/${challenge.id}/update`}>Edit Challenge</Link>}
-        {challenge && userIsAuthor && <button className="btn-sm btn-primary" type="button" onClick={onClick}>Delete Challenge</button>}
+        {challenge && userIsAuthor && <button className="button" type="button" onClick={onClick}>Delete Challenge</button>}
       </div>
     </div>
   )

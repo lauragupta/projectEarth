@@ -13,7 +13,7 @@ function Header(props) {
     navigate(`/`)
   }
   return (
-    <nav className=" container navbar navbar-expand-sm navbar-light">
+    <nav className="navbar navbar-expand-sm navbar-light">
       <div className="navbar-brand">Project Earth</div>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapser" aria-controls="navbarCollapser" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>

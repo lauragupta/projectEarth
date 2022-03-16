@@ -1,8 +1,13 @@
 $primary-color: #b2beb2;
 $secondary-color: rgb(205, 211, 205);
 
-* {
+.App {
   background-color: $primary-color;
-  background-size: cover;
-  color: darkslategrey
+  background-size: auto;
+  color: darkslategrey;
+}
+ 
+.container {
+  margin: 10px;
+
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
+import './ChallengeCard.scss'
 
 function ChallengeCard({challenge}) {
   

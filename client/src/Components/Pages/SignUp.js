@@ -45,7 +45,7 @@ function SignUp(props) {
 
   return (
     <div>
-      <h1>Sign up to Join a Challengeor to Create your own!</h1>
+      <h1>Sign up to Create a Challenge!</h1>
       <form className="form" onSubmit={handleFormSubmit} id="signup-form">
         <div className="form-group">
           <label htmlFor="signupUsername">username:</label>

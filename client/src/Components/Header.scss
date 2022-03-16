@@ -1,5 +1,5 @@
 .navbar {
-  height: 80px;
+  height: 90px;
   background-color: lightgray;
   width: 100%
 }
@@ -12,7 +12,9 @@
 
 .navbar-brand {
   padding: 10px;
-  font-size: 160%;
+  font-size: 200%;
+  font-weight: 750;
+  color: slategrey;
 }
 button {
   background: none;
