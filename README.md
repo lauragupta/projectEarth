@@ -17,7 +17,7 @@ Then you can Sign Up...
 
 And Make your own challenge.
 
-![Add Challenge Page](challengeHambergerMenuOut.JPG)
+![Add Challenge Page](editChallenge.JPG)
 
 ## Table of Contents   
 
