@@ -54,7 +54,7 @@ function AddChallenge() {
         <div className="form-group mb-3">
           <label htmlFor="challengeText">Enter your Challenge:</label>
           <CharacterCounter value={formText} maxLength={textLength} >
-            <textarea className="form-control" maxlength={textLength} value={formText} onChange={handleTextChange} id="challengeText" />
+            <textarea className="form-control" maxLength={textLength} value={formText} onChange={handleTextChange} id="challengeText" />
           </CharacterCounter>
         </div>
         <div className="form-group">

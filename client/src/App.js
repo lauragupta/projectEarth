@@ -22,7 +22,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Header isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn}/>
-        <div className='container'>
+        <div className="container page-container">
           <Routes>
             <Route path="/" element={<Challenges/>} />
             <Route path="addchallenge" element={<AddChallenge/>} />

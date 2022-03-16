@@ -2,12 +2,14 @@
 
 .App {
   background-color: $primary-color;
-  background-size: auto;
   color: darkslategrey;
-
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
  
-.container {
+.page-container {
   margin: 10px;
-
+  background-size: cover;
+  flex-grow: 1;
 }
