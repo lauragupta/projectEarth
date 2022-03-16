@@ -1,6 +1,8 @@
+@import '../vars';
+
 .navbar {
   height: 90px;
-  background-color: lightgray;
+  background-color: $secondary-color;
   width: 100%;
   display: flex;
 }
@@ -15,6 +17,7 @@
   font-weight: 750;
   color: slategrey;
   text-decoration: none;
+  margin-left: 10px;
 }
 button {
   background: none;
