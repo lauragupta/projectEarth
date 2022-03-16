@@ -8,7 +8,7 @@ import LogIn from './Components/Pages/LogIn';
 // import About from './Components/Pages/About';
 import SingleChallenge from './Components/Pages/SingleChallenge';
 import AddChallenge from './Components/Pages/AddChallenge';
-import './App.css';
+import './App.scss';
 import EditChallenge from './Components/Pages/EditChallenge';
 import auth from './utils/auth';
 

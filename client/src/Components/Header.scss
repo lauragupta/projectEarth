@@ -1,0 +1,24 @@
+.navbar {
+  height: 80px;
+  background-color: lightgray;
+  width: 100%
+}
+.nav-item {
+  padding: 15px;
+  align-items: flex-end;
+  float: right;
+
+}
+
+.navbar-brand {
+  padding: 10px;
+  font-size: 160%;
+}
+button {
+  background: none;
+  padding: 0;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  color: #0d6efd;
+}
