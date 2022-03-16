@@ -4,9 +4,20 @@
 
 ## Description  
 
-This project is a full stack React App focused on individual users making small commitments to incrementally improve how we interact with the environment. In addition to react, I used a Mongo database and mongoose and I used SASS, CSS, and some bootstrap components to style. The site is responsive and I used react hooks including react state to show the navigation and some errors differently based on changes of state. Sign Up, Log In, and make a challenge to do something to help our Earth today. 
+This project is a full stack React App focused on individual users making small commitments to incrementally improve how we interact with the environment. In addition to react, I used a Mongo database and mongoose and I used SASS, CSS, and some bootstrap components to style. The site is responsive and I used react hooks including react state to show the navigation and some errors differently based on changes of state. Sign Up today and make a challenge to commit yourself to do something to help our Earth today. 
 
-![Project Earth](https://projectearthecochallenge.herokuapp.com/)
+[Project Earth](https://projectearthecochallenge.herokuapp.com/)
+
+This is the Challenges Page to see ways others are challenging themselves to make a difference...
+![Challenges Page](challengeHambergerMenuOut.JPG)
+
+Then you can Sign Up...
+
+![Sign Up Page](SignUpNarrow.JPG)
+
+And Make your own challenge.
+
+![Add Challenge Page](challengeHambergerMenuOut.JPG)
 
 ## Table of Contents   
 
