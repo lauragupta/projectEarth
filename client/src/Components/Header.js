@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import auth from '../utils/auth';
 import "./Header.scss";
+import logo from "./project-earth-logo.svg";
 
 
 function Header(props) {
@@ -14,7 +15,11 @@ function Header(props) {
   }
   return (
     <nav className="navbar navbar-expand-sm navbar-light">
-      <div className="navbar-brand"><Link to="/">Project Earth</Link></div>
+      <div className="navbar-brand">
+        <Link to="/">
+          <img src={logo} alt="logo"/>
+           Project Earth
+        </Link></div>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapser" aria-controls="navbarCollapser" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
